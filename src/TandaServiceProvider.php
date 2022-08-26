@@ -20,7 +20,7 @@ class TandaServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             //publish the config files
             $this->publishes([
-              __DIR__.'/../config/config.php' => config_path('tanda.php'),
+              __DIR__.'/../config/tanda.php' => config_path('tanda.php'),
           ], 'tanda-config');
 
             // Register commands
