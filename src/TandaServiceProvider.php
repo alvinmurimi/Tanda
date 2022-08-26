@@ -29,7 +29,7 @@ class TandaServiceProvider extends ServiceProvider
           ]);
         }
     }
-
+    
     /**
      * Register any application services.
      *
