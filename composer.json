@@ -40,7 +40,7 @@
     },
     "scripts": {
         "post-package-install": [
-            "@php artisan mpesa:install"
+            "@php artisan tanda:install"
         ]
     }
 }
