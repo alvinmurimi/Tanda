@@ -158,7 +158,7 @@ Accepted parameters:
 2.  `Account` - A valid box account number.
 3.  `Amount` - Bill Amount (Should be between 10 and 20000).
 ```php
-$pay = Tanda::payTV("GOTV, 201712256, 100);
+$pay = Tanda::payTV("GOTV", 201712256, 100);
 ```
 
 ### Bill Pay
@@ -168,5 +168,32 @@ Accepted parameters:
 2.  `Account` - A valid KPLC Postpaid / Nairobi Wtr Meter Number.
 3.  `Amount` - Bill value in KES. Should be between 100 and 35000
 ```php
-$bill = Tanda::billPay("KPLC, 25419321, 100);
+$bill = Tanda::billPay("KPLC", 25419321, 100);
+```
+
+### Airtime Voucher
+This method is used to generate airtime vouchers.<br>
+Accepted parameters:
+1.  `Provider` - Service provider ID (`SAFARICOM`, `TELKOM`, `AIRTEL`).
+3.  `Amount` - Voucher value.
+    - Airtel - 20, 50, 100, 250, 500, 1000.
+    - Safaricom - 20, 50, 100, 250, 500, 1000.
+    - Telkom - 20, 50, 100, 200, 500, 1000.
+```php
+$voucher = Tanda::voucherFix("SAFARICOM", 254712345678, 100);
+```
+
+### Balance
+This method is used to query the API for account balances.<br>
+
+```php
+$balances = Tanda::balances();
+```
+
+### Transaction Status
+Use this to query the API for transaction status.<br>
+Accepted parameters:
+1.  `Transaction ID` - Unique request id returned during the initialization stage.
+```php
+$status = Tanda::query("ee92d1cb-625c-4e0a-8f28-8e86d929f9d7");
 ```
