@@ -68,3 +68,29 @@ Accepted parameters:
 ```php
 $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 ```
+If the request above is successful, a response similar to the one below is returned:
+```json
+{
+  "id": "e57f4762-c58e-4a22-adc0-399fff308455",
+  "status": "000001",
+  "message": "Request received successfully.",
+  "receiptNumber": null,
+  "commandId": "TopupFlexi",
+  "serviceProviderId": "SAFARICOM",
+  "datetimeCreated": "2022-08-27 00:43:57.263 +0200",
+  "datetimeLastModified": "2022-08-27 00:43:57.263 +0200",
+  "datetimeCompleted": null,
+  "requestParameters": [
+    {
+      "id": "accountNumber",
+      "value": "254712345678",
+      "label": "Phone No."
+    },
+    {
+      "id": "amount",
+      "value": "100",
+      "label": "Amount"
+    }
+  ]
+}
+```
