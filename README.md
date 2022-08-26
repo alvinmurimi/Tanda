@@ -176,9 +176,9 @@ This method is used to generate airtime vouchers.<br>
 Accepted parameters:
 1.  `Provider` - Service provider ID (`SAFARICOM`, `TELKOM`, `AIRTEL`).
 3.  `Amount` - Voucher value.
-    - Airtel - 20, 50, 100, 250, 500, 1000.
-    - Safaricom - 20, 50, 100, 250, 500, 1000.
-    - Telkom - 20, 50, 100, 200, 500, 1000.
+    -  Airtel - 20, 50, 100, 250, 500, 1000.
+    -  Safaricom - 20, 50, 100, 250, 500, 1000.
+    -  Telkom - 20, 50, 100, 200, 500, 1000.
 ```php
 $voucher = Tanda::voucherFix("SAFARICOM", 254712345678, 100);
 ```
