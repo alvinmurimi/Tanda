@@ -62,13 +62,13 @@ use Tanda;
 ### Airtime Purchase (Pinless prepaid airtime)
 You can use this API for direct airtime topups.
 Accepted parameters:
-1.  String `Provider` - Service provider ID `SAFARICOM`, `AIRTEL`, `TELKOM`.
-2.  String `MSISDN` - Phone number in international format.
-3.  Integer `Amount` - Recharge amount(10 to 10000).
+1.  `Provider` - Service provider ID `SAFARICOM`, `AIRTEL`, `TELKOM`.
+2.  `MSISDN` - Phone number in international format.
+3.  `Amount` - Recharge amount(10 to 10000).
 ```php
 $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 ```
-If the request above is successful, a response similar to the one below is returned:
+<!--If the request above is successful, a response similar to the one below is returned:
 ```json
 {
   "id": "e57f4762-c58e-4a22-adc0-399fff308455",
@@ -93,4 +93,61 @@ If the request above is successful, a response similar to the one below is retur
     }
   ]
 }
+```-->
+
+### KPLC Prepaid - Tokens
+This is used to generate tokens for KPLC prepaid meters.
+Accepted parameters:
+1.  `Account` - Meter number.
+2.  `Amount` - Tokens amount(10 to 35000).
+```php
+$tokens = Tanda::buyTokens(54401184412, 100);
 ```
+<!--Upon successful request, a response similar to the one below is returned.
+```json
+{
+  "id": "cb220e80-bbb7-492c-a410-ef565cbfc9b3",
+  "status": "000001",
+  "message": "Request received successfully.",
+  "receiptNumber": null,
+  "commandId": "VoucherFlexi",
+  "serviceProviderId": "KPLC",
+  "datetimeCreated": "2022-08-27 00:55:22.441 +0200",
+  "datetimeLastModified": "2022-08-27 00:55:22.441 +0200",
+  "datetimeCompleted": null,
+  "requestParameters": [
+    {
+      "id": "accountNumber",
+      "value": "54401184412",
+      "label": "Bill Account Number"
+    },
+    {
+      "id": "amount",
+      "value": "100",
+      "label": "Amount"
+    }
+  ]
+}
+```
+If the transaction is a success, a reponse similar to the one below will be sent to your callback.
+```json
+{
+  "status": "000000",
+  "message": "Request processed successfully",
+  "transactionId": "cb220e80-bbb7-492c-a410-ef565cbfc9b3",
+  "receiptNumber": "013200724515613",
+  "timestamp": "2020-07-24 10:12:32.459 +0000",
+  "resultParameters": [
+    {
+    "id": "units",
+    "value": "23.57",
+    "label": "Number of Kplc Token Units"
+    },
+    {
+    "id": "pin",
+    "value": "1709 6835 2390 7654 1723",
+    "label": "Kplc Prepaid Token"
+    }
+  ]
+}
+```-->
