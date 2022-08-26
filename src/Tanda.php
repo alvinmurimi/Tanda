@@ -51,7 +51,7 @@ class Tanda
                         ->get($url)[0]['balances'];
     }
 
-    public function pinless_airtime($provider, $account, $amount)
+    public function pinlessAirtime($provider, $account, $amount)
     {
         $payload = [
             "commandId" => "TopupFlexi",
@@ -84,7 +84,7 @@ class Tanda
         return $response->json();
     }
 
-    public function buy_tokens($account, $amount)
+    public function buyTokens($account, $amount)
     {
         $payload = [
             "commandId" => "VoucherFlexi",
@@ -117,7 +117,7 @@ class Tanda
         return $response->json();
     }
 
-    public function pay_tv($provider, $account, $amount)
+    public function payTV($provider, $account, $amount)
     {
         $payload = [
             "commandId" => "TopupFix",
@@ -150,7 +150,7 @@ class Tanda
         return $response->json();   
     }
 
-    public function bill_pay($provider, $account, $amount)
+    public function billPay($provider, $account, $amount)
     {
         $payload = [
             "commandId" => "BillPay",
@@ -182,7 +182,7 @@ class Tanda
                         ->post($this->endpoint, $payload)->json();  
     }
 
-    public function voucherfix($provider, $amount)
+    public function voucherFix($provider, $amount)
     {
         $payload = [
             "commandId" => "VoucherFix",
