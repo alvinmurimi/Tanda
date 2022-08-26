@@ -47,7 +47,7 @@ TANDA_CLIENT_SECRET=[Client Secret]
 TANDA_ORG_ID=[Organization ID]
 TANDA_ENV=[sandbox or live]
 ```
-Don't forget to update the callback URLs in `config/tanda.php`.<br>
+The callback URLs **MUST** be updated in `config/tanda.php`.<br>
 After updating your `.env` update the config:
 ```sh
 php artisan config:cache
