@@ -64,7 +64,7 @@ You can use this API for direct airtime topups.<br>
 Accepted parameters:
 1.  `Provider` - Service provider ID `SAFARICOM`, `AIRTEL`, `TELKOM`.
 2.  `MSISDN` - Phone number in international format.
-3.  `Amount` - Recharge amount(10 to 10000).
+3.  `Amount` - Recharge amount (Should be between 10 and 10000).
 ```php
 $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 ```
@@ -99,7 +99,7 @@ $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 This is used to generate tokens for KPLC prepaid meters.<br>
 Accepted parameters:
 1.  `Account` - Meter number.
-2.  `Amount` - Tokens amount(10 to 35000).
+2.  `Amount` - Tokens amount (Should be between 10 and 35000).
 ```php
 $tokens = Tanda::buyTokens(54401184412, 100);
 ```
@@ -166,7 +166,7 @@ Use this to make bill payments.<br>
 Accepted parameters:
 1.  `Provider` - KPLC postpaid or Nairobi water (`KPLC`, `NAIROBI_WTR`).
 2.  `Account` - A valid KPLC Postpaid / Nairobi Wtr Meter Number.
-3.  `Amount` - Bill value in KES. Should be between 100 and 35000
+3.  `Amount` - Bill value in KES (Should be between 100 and 35000).
 ```php
 $bill = Tanda::billPay("KPLC", 25419321, 100);
 ```
