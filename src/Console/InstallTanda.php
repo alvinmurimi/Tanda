@@ -4,7 +4,7 @@ namespace Alvoo\Tanda\Console;
 
 use Illuminate\Console\Command;
 
-class Install extends Command
+class InstallTanda extends Command
 {
     protected $signature = "tanda:install";
 
