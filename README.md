@@ -47,10 +47,11 @@ TANDA_CLIENT_SECRET=[Client Secret]
 TANDA_ORG_ID=[Organization ID]
 TANDA_ENV=[sandbox or live]
 ```
-
-Don't forget to update the callback URLs in `config/tanda.php`
-<<<<<<< HEAD
-=======
+Don't forget to update the callback URLs in `config/tanda.php`.<br>
+After updating your `.env` update the config:
+```sh
+php artisan config:cache
+```
 
 ## Usage
 
@@ -67,4 +68,3 @@ Accepted parameters:
 ```sh
 $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 ```
->>>>>>> 02ae75f7b9fe1ea081fe4b98bdbc62b7dc41a225
