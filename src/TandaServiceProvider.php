@@ -39,7 +39,7 @@ class TandaServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/tanda.php', 'tanda');
 
-        $this->app->bind('tanda-mpesa', function () {
+        $this->app->bind('alvoo-tanda', function () {
             return new Tanda();
         });
     }
