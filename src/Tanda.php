@@ -26,10 +26,9 @@ class Tanda
         if($this->env == 'sandbox'){
             $this->oauth = 'https://io-proxy-443.tanda.co.ke/sandbox/accounts/v1/oauth/token';
             $this->endpoint = "https://io-proxy-443.tanda.co.ke/sandbox/io/v1/organizations/".$this->org_id."/requests";
-        }else{
-            $this->oauth = 'https://io-proxy-443.tanda.co.ke/accounts/v1/oauth/token';
-            $this->endpoint = "https://io-proxy-443.tanda.co.ke/io/v1/organizations/".$this->org_id."/requests";
         }
+        $this->oauth = 'https://io-proxy-443.tanda.co.ke/accounts/v1/oauth/token';
+        $this->endpoint = "https://io-proxy-443.tanda.co.ke/io/v1/organizations/".$this->org_id."/requests";
         $this->scope = "iowallets.transaction.read iowallets.transaction.readWrite";
         $this->client = $this->client_id.":".$this->client_secret;
         $this->b64Val = base64_encode($this->client);
