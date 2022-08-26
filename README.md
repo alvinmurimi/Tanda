@@ -49,3 +49,22 @@ TANDA_ENV=[sandbox or live]
 ```
 
 Don't forget to update the callback URLs in `config/tanda.php`
+<<<<<<< HEAD
+=======
+
+## Usage
+
+Import `Tanda Facade`
+```sh
+use Tanda;
+```
+### Airtime Purchase (Pinless prepaid airtime)
+You can use this API for direct airtime topups.
+Accepted parameters:
+1. String `Provider` - Service provider ID `SAFARICOM`, `AIRTEL`, `TELKOM`
+2. String `MSISDN` - Phone number in international format
+3. Integer `Amount` - Recharge amount(10 to 10000)
+```sh
+$topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
+```
+>>>>>>> 02ae75f7b9fe1ea081fe4b98bdbc62b7dc41a225
