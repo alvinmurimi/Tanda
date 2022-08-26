@@ -28,7 +28,7 @@ composer require alvoo/tanda
 
 ## Configuration
 After installing the package, run;
-```
+```sh
 php artisan tanda:install
 ```
 or 
@@ -56,15 +56,15 @@ php artisan config:cache
 ## Usage
 
 Import `Tanda Facade`
-```sh
+```php
 use Tanda;
 ```
 ### Airtime Purchase (Pinless prepaid airtime)
 You can use this API for direct airtime topups.
 Accepted parameters:
-1. String `Provider` - Service provider ID `SAFARICOM`, `AIRTEL`, `TELKOM`.
-2. String `MSISDN` - Phone number in international format.
-3. Integer `Amount` - Recharge amount(10 to 10000).
-```sh
+1.  String `Provider` - Service provider ID `SAFARICOM`, `AIRTEL`, `TELKOM`.
+2.  String `MSISDN` - Phone number in international format.
+3.  Integer `Amount` - Recharge amount(10 to 10000).
+```php
 $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 ```
