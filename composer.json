@@ -1,5 +1,5 @@
 {
-    "name": "alvo/tanda",
+    "name": "alvoo/tanda",
     "description": "Laravel package for Tanda API",
     "type": "library",
     "keywords": ["tanda", "api", "laravel"],
@@ -31,10 +31,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Alvo\\Tanda\\TandaServiceProvider"
+                "Alvoo\\Tanda\\TandaServiceProvider"
             ],
             "aliases":{
-                "Tanda":"Alvo\\Tanda\\Facades\\Tanda"
+                "Tanda":"Alvoo\\Tanda\\Facades\\Tanda"
             }
         }
     },

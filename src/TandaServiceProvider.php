@@ -1,6 +1,6 @@
 <?php
 
-namespace Alvo\Tanda;
+namespace Alvoo\Tanda;
 
 use Illuminate\Support\ServiceProvider;
 use Alvo\Tanda\Console\Install;

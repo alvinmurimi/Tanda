@@ -1,6 +1,6 @@
 <?php
 
-namespace Alvo\Tanda\Console;
+namespace Alvoo\Tanda\Console;
 
 use Illuminate\Console\Command;
 
@@ -16,7 +16,7 @@ class Install extends Command
         $this->info('Publishing Configuration...');
 
         $this->call('vendor:publish', [
-      '--provider' => "Alvo\Tanda\TandaServiceProvider",
+      '--provider' => "Alvoo\Tanda\TandaServiceProvider",
       '--tag' => "tanda-config"
     ]);
 

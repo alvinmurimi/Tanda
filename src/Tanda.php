@@ -1,6 +1,6 @@
 <?php
 
-namespace Alvo\Tanda;
+namespace Alvoo\Tanda;
 
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
