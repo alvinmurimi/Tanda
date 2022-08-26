@@ -9,13 +9,13 @@ Laravel package for Tanda API
 This package helps you integrate Tanda payment APIs into your laravel app.
 
 The following APIs can be integrated through the package:
-  -  Airtime purchase
-  -  Utility bill payments
-  -  KPLC prepaid tokens purcase
-  -  Airtime voucher purchase
-  -  Pay TV subscriptions
-  -  Transaction status
-  -  Account balances
+  - Airtime purchase
+  - Utility bill payments
+  - KPLC prepaid tokens purcase
+  - Airtime voucher purchase
+  - Pay TV subscriptions
+  - Transaction status
+  - Account balances
 
 This package is based on Tanda's REST API which can be found here: [https://docs.tanda.co.ke/reference](https://docs.tanda.co.ke/reference)
 
@@ -60,7 +60,7 @@ Import `Tanda Facade`
 use Tanda;
 ```
 ### Airtime Purchase (Pinless prepaid airtime)
-You can use this API for direct airtime topups.
+You can use this API for direct airtime topups.<br>
 Accepted parameters:
 1.  `Provider` - Service provider ID `SAFARICOM`, `AIRTEL`, `TELKOM`.
 2.  `MSISDN` - Phone number in international format.
@@ -96,7 +96,7 @@ $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 ```-->
 
 ### KPLC Prepaid - Tokens
-This is used to generate tokens for KPLC prepaid meters.
+This is used to generate tokens for KPLC prepaid meters.<br>
 Accepted parameters:
 1.  `Account` - Meter number.
 2.  `Amount` - Tokens amount(10 to 35000).
@@ -151,3 +151,12 @@ If the transaction is a success, a reponse similar to the one below will be sent
   ]
 }
 ```-->
+### Pay Tv
+This method is used to make payments for TV subscriptions.<br>
+Accepted parameters:
+1.  `Provider` - Pay TV service provider(`GOTV`, `DSTV`, `ZUKU`, `STARTIMES`).
+2.  `Account` - A valid box account number.
+3.  `Amount` - Bill Amount (Should be between 10 and 20000).
+```php
+$pay = Tanda::payTV("GOTV, 201712256, 100);
+```
