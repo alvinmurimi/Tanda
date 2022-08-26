@@ -6,12 +6,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Alvo\\Tanda\\": "src/"
+            "Alvoo\\Tanda\\": "src/"
         }
     },
     "autoload-dev": {
      "psr-4": {
-         "Alvo\\Tanda\\Tests\\": "tests"
+         "Alvoo\\Tanda\\Tests\\": "tests"
          }
     },
     "require": {
