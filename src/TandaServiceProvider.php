@@ -3,7 +3,7 @@
 namespace Alvoo\Tanda;
 
 use Illuminate\Support\ServiceProvider;
-use Alvo\Tanda\Console\Install;
+use Alvoo\Tanda\Console\Install;
 
 class TandaServiceProvider extends ServiceProvider
 {
