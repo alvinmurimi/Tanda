@@ -17,7 +17,7 @@ class Install extends Command
 
         $this->call('vendor:publish', [
       '--provider' => "Alvoo\Tanda\TandaServiceProvider",
-      '--tag' => "tanda-config"
+      '--tag' => "tanda-config",
     ]);
 
         $this->info('Tanda installed successfully.');
