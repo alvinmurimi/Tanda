@@ -160,3 +160,13 @@ Accepted parameters:
 ```php
 $pay = Tanda::payTV("GOTV, 201712256, 100);
 ```
+
+### Bill Pay
+Use this to make bill payments.<br>
+Accepted parameters:
+1.  `Provider` - KPLC postpaid or Nairobi water (`KPLC`, `NAIROBI_WTR`).
+2.  `Account` - A valid KPLC Postpaid / Nairobi Wtr Meter Number.
+3.  `Amount` - Bill value in KES. Should be between 100 and 35000
+```php
+$bill = Tanda::billPay("KPLC, 25419321, 100);
+```
