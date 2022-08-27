@@ -171,7 +171,7 @@ $bill = Tanda::billPay("KPLC", 25419321, 100);
 ```
 
 ### Airtime Voucher
-This method is used to generate airtime vouchers.<br>
+This method is used to generate airtime voucher pins which you can use to recharge normally as you would with scratch cards.<br>
 Accepted parameters:
 1.  `Provider` - Service provider ID (`SAFARICOM`, `TELKOM`, `AIRTEL`).
 3.  `Amount` - Voucher value.
