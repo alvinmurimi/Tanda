@@ -197,3 +197,12 @@ Accepted parameters:
 ```php
 $status = Tanda::query("ee92d1cb-625c-4e0a-8f28-8e86d929f9d7");
 ```
+
+### Contributing
+Pull requests and issues are welcome. Refer to [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+### Security Vulnerabilities
+If you discover any security vulnerability, please send an e-mail to alvinmayende@gmail.com.
+
+### License
+This package is open-source software licensed under the [MIT license](LICENSE.md).
