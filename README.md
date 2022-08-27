@@ -191,7 +191,7 @@ $balances = Tanda::balances();
 ```
 
 ### Transaction Status
-Use this to query the API for transaction status.<br>
+Use this to query the transaction status API.<br>
 Accepted parameters:
 1.  `Transaction ID` - Unique request id returned during the initialization stage.
 ```php
