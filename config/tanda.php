@@ -9,48 +9,48 @@ return [
     |The App CLIENT ID
     |------------------------------------------
     */
-    'client_id'   => env('TANDA_CLIENT_ID', '5fcd60dc-a281-4616-9da1-5a6324c45ec7'),
+    'client_id'   => env('TANDA_CLIENT_ID', ''),
 
     /*-----------------------------------------
     |The App CLIENT Secret
     |------------------------------------------
     */
-    'client_secret' => env('TANDA_CLIENT_SECRET', '8OKXu0mcumfnyFhWOO4QzprA'),
+    'client_secret' => env('TANDA_CLIENT_SECRET', ''),
 
     /*-----------------------------------------
     |The ORG ID
     |------------------------------------------
     */
-    'org_id'         => env('TANDA_ORG_ID', 'c60aec89-eae9-4230-b48a-347f0f13fd95'),
+    'org_id'         => env('TANDA_ORG_ID', ''),
 
     /*-----------------------------------------
     |Airtime callback
     |------------------------------------------
     */
-    'topup_callback'  => 'https://webhook.site/f7c195aa-9b8f-4819-902e-64f86d47f4dd',
+    'topup_callback'  => '',
 
     /*-----------------------------------------
     |Billpay callback
     |------------------------------------------
     */
-    'billpay_callback' => 'https://webhook.site/f7c195aa-9b8f-4819-902e-64f86d47f4dd',
+    'billpay_callback' => '',
 
     /*-----------------------------------------
     |Paytv callback
     |------------------------------------------
     */
-    'paytv_callback' => 'https://webhook.site/f7c195aa-9b8f-4819-902e-64f86d47f4dd',
+    'paytv_callback' => '',
 
     /*-----------------------------------------
     |KPLC Tokens callback
     |------------------------------------------
     */
-    'tokens_callback' => 'https://webhook.site/f7c195aa-9b8f-4819-902e-64f86d47f4dd',
+    'tokens_callback' => '',
 
     /*-----------------------------------------
     |Airtime voucherfix callback
     |------------------------------------------
     */
-    'voucher_callback' => 'https://webhook.site/f7c195aa-9b8f-4819-902e-64f86d47f4dd',
+    'voucher_callback' => '',
 
 ];
