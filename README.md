@@ -9,7 +9,7 @@ Laravel package for Tanda payments API
 This package helps you integrate Tanda payment APIs into your laravel app.
 
 The following APIs can be integrated through the package:
-  - Airtime purchase
+  - Airtime topup
   - Utility bill payments
   - KPLC prepaid tokens purcase
   - Airtime voucher purchase
