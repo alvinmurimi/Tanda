@@ -163,7 +163,7 @@ class Tanda
                     ],
                     [
                         "id" => "accountNumber",
-                        "value" => $account, //KPLC Postpaid / Nairobi Wtr Meter Number
+                        "value" => $account,
                         "label" => "Bill Account Number"
                     ]
 
@@ -186,11 +186,11 @@ class Tanda
     {
         $payload = [
             "commandId" => "VoucherFix",
-            "serviceProviderId" => $provider, //SAFARICOM, TELKOM, AIRTEL
+            "serviceProviderId" => $provider,
             "requestParameters" => [
                     [
                         "id" => "amount", 
-                        "value" => $amount, //20,50,100,250,500,1000, telkom=200 !250,
+                        "value" => $amount,
                         "label" => "Amount"
                     ]
 

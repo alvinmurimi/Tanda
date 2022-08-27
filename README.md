@@ -54,7 +54,7 @@ php artisan config:cache
 
 ## Usage
 
-Import `Tanda Facade`
+Import `Tanda` Facade
 ```php
 use Tanda;
 ```
