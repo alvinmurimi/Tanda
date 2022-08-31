@@ -91,12 +91,16 @@ class Tanda
         );
     }
 
+    /*
+    *   This method is no longer supported as of 31/08/2022
+    *
     public function buyTokens($account, $amount)
     {
         return $this->submit(
             'VoucherFlexi', 'KPLC', $account, $amount, 'tokens'
         );
     }
+    */
 
     public function payTV($provider, $account, $amount)
     {
