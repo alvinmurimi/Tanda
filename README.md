@@ -10,7 +10,6 @@ This package helps you integrate Tanda payment APIs into your laravel app.
 The following APIs can be integrated through the package:
   - Airtime topup
   - Utility bill payments
-  - KPLC prepaid tokens purcase
   - Airtime voucher purchase
   - Pay TV subscriptions
   - Transaction status
@@ -94,62 +93,6 @@ $topup = Tanda::pinlessAirtime("SAFARICOM", "254712345678", 100);
 }
 ```-->
 
-### KPLC Prepaid - Tokens
-This is used to generate tokens for KPLC prepaid meters.<br>
-Accepted parameters:
-1.  `Account` - Meter number.
-2.  `Amount` - Tokens amount (Should be between 10 and 35000).
-```php
-$tokens = Tanda::buyTokens(54401184412, 100);
-```
-<!--Upon successful request, a response similar to the one below is returned.
-```json
-{
-  "id": "cb220e80-bbb7-492c-a410-ef565cbfc9b3",
-  "status": "000001",
-  "message": "Request received successfully.",
-  "receiptNumber": null,
-  "commandId": "VoucherFlexi",
-  "serviceProviderId": "KPLC",
-  "datetimeCreated": "2022-08-27 00:55:22.441 +0200",
-  "datetimeLastModified": "2022-08-27 00:55:22.441 +0200",
-  "datetimeCompleted": null,
-  "requestParameters": [
-    {
-      "id": "accountNumber",
-      "value": "54401184412",
-      "label": "Bill Account Number"
-    },
-    {
-      "id": "amount",
-      "value": "100",
-      "label": "Amount"
-    }
-  ]
-}
-```
-If the transaction is a success, a reponse similar to the one below will be sent to your callback.
-```json
-{
-  "status": "000000",
-  "message": "Request processed successfully",
-  "transactionId": "cb220e80-bbb7-492c-a410-ef565cbfc9b3",
-  "receiptNumber": "013200724515613",
-  "timestamp": "2020-07-24 10:12:32.459 +0000",
-  "resultParameters": [
-    {
-    "id": "units",
-    "value": "23.57",
-    "label": "Number of Kplc Token Units"
-    },
-    {
-    "id": "pin",
-    "value": "1709 6835 2390 7654 1723",
-    "label": "Kplc Prepaid Token"
-    }
-  ]
-}
-```-->
 ### Pay Tv
 This method is used to make payments for TV subscriptions.<br>
 Accepted parameters:
@@ -163,11 +106,11 @@ $pay = Tanda::payTV("GOTV", 201712256, 100);
 ### Bill Pay
 Use this to make bill payments.<br>
 Accepted parameters:
-1.  `Provider` - KPLC postpaid or Nairobi water (`KPLC`, `NAIROBI_WTR`).
-2.  `Account` - A valid KPLC Postpaid / Nairobi Wtr Meter Number.
+1.  `Provider` - Nairobi water (`NAIROBI_WTR`).
+2.  `Account` - A Nairobi Wtr Meter Number.
 3.  `Amount` - Bill value in KES (Should be between 100 and 35000).
 ```php
-$bill = Tanda::billPay("KPLC", 25419321, 100);
+$bill = Tanda::billPay("NAIROBI_WTR", 25419321, 100);
 ```
 
 ### Airtime Voucher
