@@ -51,162 +51,72 @@ class Tanda
                         ->get($url)[0]['balances'];
     }
 
-    public function pinlessAirtime($provider, $account, $amount)
+    public function submit($commandID, $serviceProviderId, $account = null, $amount, $callback)
     {
+        $requestParameters = [
+            [
+                "id" => "amount",
+                "value" => $amount,
+                "label" => "Amount"
+            ]
+        ];
+        if(!is_null($account)){
+            $requestParameters[] = [
+                "id" => "accountNumber",
+                "value" => $account,
+                "label" => "Account Number"
+            ];
+        }
+        
         $payload = [
-            "commandId" => "TopupFlexi",
-            "serviceProviderId" => $provider, //SAFARICOM, AIRTEL, TELKOM
-            "requestParameters" => [
-                    [
-                        "id" => "amount",//10 to 10,000
-                        "value" => $amount,
-                        "label" => "Amount"
-                    ],
-                    [
-                        "id" => "accountNumber",
-                        "value" => $account,
-                        "label" => "Phone No."
-                    ]
-
-                ],
+            "commandId" => $commandID,
+            "serviceProviderId" => $serviceProviderId,
+            "requestParameters" => $requestParameters,
             "referenceParameters" => [
                     [
                         "id" => "resultUrl",
-                        "value" => config('tanda.topup_callback'),
+                        "value" => config('tanda.'.$callback.'_callback'),
                         "label" => "Hook"
                     ]
             ]
         ];
-
-        $response = HTTP::withToken($this->get_access_token())
+        return Http::withToken($this->get_access_token())
                         ->accept('application/json')
-                        ->post($this->endpoint, $payload);
-        return $response->json();
+                        ->post($this->endpoint, $payload)->json();
+    }
+    public function pinlessAirtime($provider, $account, $amount)
+    {
+        return $this->submit(
+            'TopupFlexi', $provider, $account, $amount, 'topup'
+        );
     }
 
     public function buyTokens($account, $amount)
     {
-        $payload = [
-            "commandId" => "VoucherFlexi",
-            "serviceProviderId" => "KPLC",
-            "requestParameters" => [
-                    [
-                        "id" => "amount",
-                        "value" => $amount, //10 to 35,000
-                        "label" => "Amount"
-                    ],
-                    [
-                        "id" => "accountNumber",
-                        "value" => $account, //Meter number
-                        "label" => "Bill Account Number"
-                    ]
-
-                ],
-            "referenceParameters" => [
-                    [
-                        "id" => "resultUrl",
-                        "value" => config('tanda.tokens_callback'),
-                        "label" => "Hook"
-                    ]
-            ]
-        ];
-
-        $response = HTTP::withToken($this->get_access_token())
-                        ->accept('application/json')
-                        ->post($this->endpoint, $payload);
-        return $response->json();
+        return $this->submit(
+            'VoucherFlexi', 'KPLC', $account, $amount, 'tokens'
+        );
     }
 
     public function payTV($provider, $account, $amount)
     {
-        $payload = [
-            "commandId" => "TopupFix",
-            "serviceProviderId" => $provider,
-            "requestParameters" => [
-                    [
-                        "id" => "amount",
-                        "value" => $amount, //10 to 20,000
-                        "label" => "Amount"
-                    ],
-                    [
-                        "id" => "accountNumber",
-                        "value" => $account, //Box account number
-                        "label" => "Bill Account Number"
-                    ]
-
-                ],
-            "referenceParameters" => [
-                    [
-                        "id" => "resultUrl",
-                        "value" => config('tanda.paytv_callback'),
-                        "label" => "Hook"
-                    ]
-            ]
-        ];
-
-        $response = HTTP::withToken($this->get_access_token())
-                        ->accept('application/json')
-                        ->post($this->endpoint, $payload);
-        return $response->json();   
+        return $this->submit(
+            'TopupFix', $provider, $account, $amount, 'paytv'
+        );
     }
 
     public function billPay($provider, $account, $amount)
     {
-        $payload = [
-            "commandId" => "BillPay",
-            "serviceProviderId" => $provider, //KPLC, NAIROBI_WTR
-            "requestParameters" => [
-                    [
-                        "id" => "amount",
-                        "value" => $amount, //100 - 35000
-                        "label" => "Amount"
-                    ],
-                    [
-                        "id" => "accountNumber",
-                        "value" => $account,
-                        "label" => "Bill Account Number"
-                    ]
-
-                ],
-            "referenceParameters" => [
-                    [
-                        "id" => "resultUrl",
-                        "value" => config('tanda.billpay_callback'),
-                        "label" => "Hook"
-                    ]
-            ]
-        ];
-
-        return HTTP::withToken($this->get_access_token())
-                        ->accept('application/json')
-                        ->post($this->endpoint, $payload)->json();  
+        return $this->submit(
+            'BillPay', $provider, $account, $amount, 'billpay'
+        );
     }
 
     public function voucherFix($provider, $amount)
     {
-        $payload = [
-            "commandId" => "VoucherFix",
-            "serviceProviderId" => $provider,
-            "requestParameters" => [
-                    [
-                        "id" => "amount", 
-                        "value" => $amount,
-                        "label" => "Amount"
-                    ]
-
-                ],
-            "referenceParameters" => [
-                    [
-                        "id" => "resultUrl",
-                        "value" => config('tanda.voucher_callback'),
-                        "label" => "Hook"
-                    ]
-            ]
-        ];
-
-        return HTTP::withToken($this->get_access_token())
-                        ->accept('application/json')
-                        ->post($this->endpoint, $payload)->json();
+        return $this->submit(
+            'VoucherFix', $provider, null, $amount, 'voucher'
+        );
     }
 
     public function query($transaction)
