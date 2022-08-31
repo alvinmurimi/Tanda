@@ -14,11 +14,8 @@ class TandaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // require __DIR__.'/routes/web.php';
-       // $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-
         if ($this->app->runningInConsole()) {
-            //publish the config files
+            //publish the config file
             $this->publishes([
               __DIR__.'/../config/tanda.php' => config_path('tanda.php'),
           ], 'tanda-config');
