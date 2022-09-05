@@ -24,8 +24,8 @@ class Tanda
         $this->env = config('tanda.env');
         $this->org_id = config('tanda.org_id');
         if($this->env == 'sandbox'){
-            $this->oauth = 'https://io-proxy-443.tanda.co.ke/sandbox/accounts/v1/oauth/token';
-            $this->endpoint = "https://io-proxy-443.tanda.co.ke/sandbox/io/v1/organizations/".$this->org_id."/requests";
+            $this->oauth = 'https://tandaio-api-uats.tanda.co.ke/accounts/v1/oauth/token';
+            $this->endpoint = "https://tandaio-api-uats.tanda.co.ke/io/v1/organizations/".$this->org_id."/requests";
         }
         $this->oauth = 'https://io-proxy-443.tanda.co.ke/accounts/v1/oauth/token';
         $this->endpoint = "https://io-proxy-443.tanda.co.ke/io/v1/organizations/".$this->org_id."/requests";
@@ -34,7 +34,7 @@ class Tanda
         $this->b64Val = base64_encode($this->client);
         
     }
-
+    
     private function get_access_token()
     {
         return Http::withHeaders([
