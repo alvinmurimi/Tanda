@@ -45,7 +45,7 @@ class Tanda
     public function balances()
     {
         $uri = "https://io-proxy-443.tanda.co.ke/sandbox/wallets/v1/orgs/".$this->org_id."/balances?accountTypes=01,02";
-        $url = $this->env == 'sandbox' ? $uri : str_replace('/sandbox', '', $uri); 
+        $url = $this->env !== 'sandbox' ? $uri : str_replace('/sandbox', '', $uri); 
         return HTTP::withToken($this->get_access_token())
                         ->accept('application/json')
                         ->get($url)[0]['balances'];
